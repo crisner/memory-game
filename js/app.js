@@ -39,7 +39,10 @@ function shuffle(array) {
 
 const cards = document.querySelectorAll('.card');
 const moves = document.querySelector('.moves');
+const restartBtn = document.querySelector('.restart');
 moves.textContent = 0;
+
+restartBtn.addEventListener('click', restart);
 
 for(let card of cards) {
     card.addEventListener('click', show);
@@ -101,4 +104,22 @@ function finalScore() {
     function close() {
         modal.style.display = 'none';
     }
+}
+
+function restart() {
+    if (openCards.length === 0 && matchedCards.length === 0) {
+        return;
+    }
+
+    matchedCards.map(function(card) {
+        card.classList.remove('match');
+    });
+
+    openCards.map(function(card) {
+        card.classList.remove('open', 'show');
+    });
+
+    moves.textContent = 0;
+    openCards = [];
+    matchedCards = [];
 }
