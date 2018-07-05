@@ -38,6 +38,7 @@ function shuffle(array) {
  */
 
 const cards = document.querySelectorAll('.card');
+const moves = document.querySelector('.moves');
 
 for(let card of cards) {
     card.addEventListener('click', show);
@@ -58,6 +59,7 @@ function show(e) {
     // Close open cards after sometime
     if (openCards.length === 2) {
         match();
+        console.log(openCards.length, matchedCards.length);
     }
 }
 
@@ -67,8 +69,9 @@ function match() {
             card.className = 'card match';
             matchedCards.push(card);
         });
+        setTimeout(finalScore, 500);
         openCards = [];
-        console.log(matchedCards, matchedCards.length);
+        // console.log(matchedCards, matchedCards.length);
     } else {
         // Hide cards if they do not match
         setTimeout(function() {
@@ -76,7 +79,24 @@ function match() {
                 opencard.classList.remove('open', 'show');
             }
             openCards = [];
-            console.log(openCards, openCards.length);
+            // console.log(openCards, openCards.length);
         }, 1500);
+    }
+}
+
+function finalScore() {
+    const modal = document.querySelector('.modal');
+    const closeModal = document.querySelector('.close');
+    const score = document.querySelector('#total-moves');
+
+    closeModal.addEventListener('click', close);
+
+    if (matchedCards.length === 16) {
+        modal.style.display = 'block';
+        score.textContent = moves.textContent;
+    }
+
+    function close() {
+        modal.style.display = 'none';
     }
 }
