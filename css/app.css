@@ -107,3 +107,48 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+/*
+ * Styles for the Final Score Modal
+ */
+
+ .final-score.modal {
+    position: absolute;
+    top: 50%;
+    width: 340px;
+    min-height: 300px;
+    background: linear-gradient(160deg, #02ccba 0%, #02b3e4 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: none;
+    z-index: 1;
+ }
+
+ .final-score.modal h1 {
+    text-align: center;
+ }
+
+ .final-score.modal .fa.fa-times {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+ }
+
+ .final-score.modal .stars {
+    color: yellow;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 1.5em 0;
+ }
+
+ .final-score.modal .fa.fa-star {
+    margin: 0.2em;
+    font-size: x-large;
+ }
+
+ .final-score.modal p {
+    text-align: center;
+ }
