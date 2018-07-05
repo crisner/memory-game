@@ -51,7 +51,7 @@ let openCards = [];
 let matchedCards = [];
 function show(e) {
     //  Prevent opening more than two cards
-    if (openCards.length >= 2) {
+    if (openCards.length >= 2 || e.target.classList.contains('open', 'show') || e.target.classList.contains('match') || e.target.classList.contains('fa')) {
         return;
     }
 
