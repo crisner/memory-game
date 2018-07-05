@@ -39,6 +39,7 @@ function shuffle(array) {
 
 const cards = document.querySelectorAll('.card');
 const moves = document.querySelector('.moves');
+moves.textContent = 0;
 
 for(let card of cards) {
     card.addEventListener('click', show);
@@ -58,6 +59,7 @@ function show(e) {
 
     // Close open cards after sometime
     if (openCards.length === 2) {
+        moves.textContent ++;
         match();
         console.log(openCards.length, matchedCards.length);
     }
