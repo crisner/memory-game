@@ -93,16 +93,22 @@ function finalScore() {
     const modal = document.querySelector('.modal');
     const closeModal = document.querySelector('.close');
     const score = document.querySelector('#total-moves');
+    const container = document.querySelector('.container');
+    const backdrop = document.querySelector('.backdrop');
+    const containerHeight = container.offsetHeight;
 
     closeModal.addEventListener('click', close);
 
     if (matchedCards.length === 16) {
         modal.style.display = 'block';
         score.textContent = moves.textContent;
+        backdrop.classList.add('backdrop-show');
+        backdrop.style.height = containerHeight + 'px';
     }
 
     function close() {
         modal.style.display = 'none';
+        backdrop.style.display = 'none';
     }
 }
 
