@@ -37,7 +37,7 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-const cards = document.querySelectorAll('.card');
+let cards = document.querySelectorAll('.card');
 const moves = document.querySelector('.moves');
 const restartBtn = document.querySelector('.restart');
 moves.textContent = 0;
@@ -113,6 +113,19 @@ function finalScore() {
 }
 
 function restart() {
+    // Shuffle cards
+    const deck = document.querySelector('.deck');
+    const cardsArr = [];
+    cards.forEach(function(card) {
+        cardsArr.push(card);
+    });
+    deck.innerHTML = '';
+    cards = shuffle(cardsArr);
+    for(let card of cards) {
+        deck.appendChild(card);
+    }
+
+    // Display closed cards
     if (openCards.length === 0 && matchedCards.length === 0) {
         return;
     }
