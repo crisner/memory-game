@@ -146,6 +146,7 @@ function restart() {
     moves.textContent = movesCounter + ' Moves';
     openCards = [];
     matchedCards = [];
+    starScore('.stars');
 }
 
 function starScore(name, display, color) {
