@@ -63,7 +63,7 @@ function show(e) {
     // Close open cards after sometime
     if (openCards.length === 2) {
         moves.textContent ++;
-        starScore();
+        starScore('.stars', 'inline-block');
         match();
         // console.log(openCards.length, matchedCards.length);
     }
@@ -105,6 +105,7 @@ function finalScore() {
         score.textContent = moves.textContent;
         backdrop.classList.add('backdrop-show');
         backdrop.style.height = containerHeight + 'px';
+        starScore('.modal-stars', 'none');
     }
 
     function close() {
@@ -144,11 +145,14 @@ function restart() {
     matchedCards = [];
 }
 
-function starScore() {
-    const stars = document.querySelector('.stars').children;
+function starScore(name, value) {
+    const stars = document.querySelector(name).children;
     if (moves.textContent > 12 && moves.textContent < 20) {
         stars[2].style.color = 'black';
+        stars[2].style.display = value;
     } else if (moves.textContent > 19) {
         stars[1].style.color = 'black';
+        stars[1].style.display = value;
+        stars[2].style.display = value;
     }
 }
