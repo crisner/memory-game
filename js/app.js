@@ -40,7 +40,8 @@ function shuffle(array) {
 let cards = document.querySelectorAll('.card');
 const moves = document.querySelector('.moves');
 const restartBtn = document.querySelector('.restart');
-moves.textContent = 0;
+let movesCounter = 0;
+moves.textContent = movesCounter + ' Moves';
 
 restartBtn.addEventListener('click', restart);
 
@@ -62,7 +63,8 @@ function show(e) {
 
     // Close open cards after sometime
     if (openCards.length === 2) {
-        moves.textContent ++;
+        movesCounter++;
+        moves.textContent = movesCounter === 1 ? 1 + ' Move' : movesCounter + ' Moves';
         starScore('.stars', 'inline-block');
         match();
         // console.log(openCards.length, matchedCards.length);
@@ -140,17 +142,18 @@ function restart() {
         card.classList.remove('open', 'show');
     });
 
-    moves.textContent = 0;
+    movesCounter = 0;
+    moves.textContent = movesCounter + ' Moves';
     openCards = [];
     matchedCards = [];
 }
 
 function starScore(name, value) {
     const stars = document.querySelector(name).children;
-    if (moves.textContent > 12 && moves.textContent < 20) {
+    if (movesCounter > 12 && movesCounter < 20) {
         stars[2].style.color = 'black';
         stars[2].style.display = value;
-    } else if (moves.textContent > 19) {
+    } else if (movesCounter > 19) {
         stars[1].style.color = 'black';
         stars[1].style.display = value;
         stars[2].style.display = value;
