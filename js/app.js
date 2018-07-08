@@ -59,7 +59,6 @@ function show(e) {
     // Push open cards to array
     e.target.classList.add('open', 'show');
     openCards.push(e.target);
-    // console.log(openCards, openCards.length);
 
     // Close open cards after sometime
     if (openCards.length === 2) {
@@ -67,7 +66,6 @@ function show(e) {
         moves.textContent = movesCounter === 1 ? 1 + ' Move' : movesCounter + ' Moves';
         starScore('.stars', 'inline-block');
         match();
-        // console.log(openCards.length, matchedCards.length);
     }
 }
 
@@ -79,7 +77,6 @@ function match() {
         });
         setTimeout(finalScore, 500);
         openCards = [];
-        // console.log(matchedCards, matchedCards.length);
     } else {
         // Hide cards if they do not match
         setTimeout(function() {
@@ -87,7 +84,6 @@ function match() {
                 opencard.classList.remove('open', 'show');
             }
             openCards = [];
-            // console.log(openCards, openCards.length);
         }, 1500);
     }
 }
