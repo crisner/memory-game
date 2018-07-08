@@ -107,7 +107,7 @@ function finalScore() {
         score.textContent = moves.textContent;
         backdrop.classList.add('backdrop-show');
         backdrop.style.height = containerHeight + 'px';
-        starScore('.modal-stars', 'none');
+        starScore('.modal-stars', 'none', 'yellow');
     }
 
     function close() {
@@ -148,14 +148,19 @@ function restart() {
     matchedCards = [];
 }
 
-function starScore(name, value) {
+function starScore(name, display, color) {
     const stars = document.querySelector(name).children;
     if (movesCounter > 12 && movesCounter < 20) {
         stars[2].style.color = 'black';
-        stars[2].style.display = value;
-    } else if (movesCounter > 19) {
+        stars[2].style.display = display;
+    } else if (movesCounter >= 20) {
         stars[1].style.color = 'black';
-        stars[1].style.display = value;
-        stars[2].style.display = value;
+        stars[1].style.display = display;
+        stars[2].style.display = display;
+    } else if (movesCounter <= 12) {
+        stars[1].style.display = 'inline-block';
+        stars[2].style.display = 'inline-block';
+        stars[2].style.color = color || 'orange';
+        stars[1].style.color = color || 'orange';
     }
 }
