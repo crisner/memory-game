@@ -58,13 +58,14 @@ function show(e) {
     // Push open cards to array
     e.target.classList.add('open', 'show');
     openCards.push(e.target);
-    console.log(openCards, openCards.length);
+    // console.log(openCards, openCards.length);
 
     // Close open cards after sometime
     if (openCards.length === 2) {
         moves.textContent ++;
+        starScore();
         match();
-        console.log(openCards.length, matchedCards.length);
+        // console.log(openCards.length, matchedCards.length);
     }
 }
 
@@ -141,4 +142,13 @@ function restart() {
     moves.textContent = 0;
     openCards = [];
     matchedCards = [];
+}
+
+function starScore() {
+    const stars = document.querySelector('.stars').children;
+    if (moves.textContent > 12 && moves.textContent < 20) {
+        stars[2].style.color = 'black';
+    } else if (moves.textContent > 19) {
+        stars[1].style.color = 'black';
+    }
 }
