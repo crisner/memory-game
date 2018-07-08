@@ -136,7 +136,7 @@ h1 {
     cursor: pointer;
  }
 
- .final-score.modal .stars {
+ .final-score.modal .modal-stars {
     color: yellow;
     list-style: none;
     display: flex;
