@@ -84,10 +84,20 @@ function match() {
         // Hide cards if they do not match
         setTimeout(function() {
             for(let opencard of openCards) {
-                opencard.classList.remove('open', 'show');
+                opencard.style.animation = 'shake 0.5s';
+                setTimeout(function() {
+                    opencard.style.animation = 'reverseflip 0.4s';
+                }, 500);
             }
-            openCards = [];
-        }, 1500);
+            setTimeout(function() {
+                for(let opencard of openCards) {
+                    opencard.classList.remove('open', 'show');
+                    opencard.style.animation = '';
+                    opencard.removeAttribute('style');
+                }
+                openCards = [];
+            }, 800);
+        }, 900);
     }
 }
 
