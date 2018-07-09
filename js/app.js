@@ -43,13 +43,16 @@ const restartBtn = document.querySelector('.restart');
 let movesCounter = 0;
 moves.textContent = movesCounter + ' Moves';
 
+// TODO: Reset game
 restartBtn.addEventListener('click', restart);
 
+// TODO: Reveal cards
 for(let card of cards) {
     card.addEventListener('click', show);
 }
 let openCards = [];
 let matchedCards = [];
+
 function show(e) {
     //  Prevent opening more than two cards
     if (openCards.length >= 2 || e.target.classList.contains('open', 'show') || e.target.classList.contains('match') || e.target.classList.contains('fa')) {
@@ -145,6 +148,7 @@ function restart() {
     starScore('.stars');
 }
 
+// Function to display the number of stars received according to player's moves
 function starScore(name, display, color) {
     const stars = document.querySelector(name).children;
     if (movesCounter > 12 && movesCounter < 20) {
