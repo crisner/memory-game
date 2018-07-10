@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    background: #d5dee2 url('../img/bg.jpg') center;
+    background: #d5dee2 url('../img/bg.jpg') bottom;
     background-size: cover;
     font-family: 'Coda', cursive;
 }
@@ -190,6 +190,42 @@ svg {
     background: rgba(46, 61, 73, 0.1);
     z-index: 1;
  }
+
+ /*
+ * Footer styles
+ */
+footer p {
+    padding: 0;
+    padding-bottom: 1em;
+}
+
+.left,
+.right,
+.left a:hover,
+.right a:hover {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: #d5dee2;
+    text-align: left;
+    text-decoration: none;
+}
+
+.left a,
+.right a {
+    color: #effaff;
+    text-decoration: none;
+}
+
+.left {
+    float: left;
+    margin-left: -324px;
+}
+
+.right {
+    float: right;
+    margin-right: -310px;
+}
 
  /*
  * CSS Animations
