@@ -17,7 +17,8 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #d5dee2 url('../img/bg.jpg') center;
+    background-size: cover;
     font-family: 'Coda', cursive;
 }
 
@@ -31,6 +32,7 @@ body {
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
+    color: #d5dee2;
 }
 
 /*
@@ -58,7 +60,7 @@ svg {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #60a7e2 0%, #6681db 100%);
+    background: linear-gradient(160deg, #045d9b 0%, #1b8edc 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -84,7 +86,7 @@ svg {
 }
 
 .deck .card.open {
-    background: #02b3e4;
+    background: #1f92e7;
     cursor: default;
     animation: flip 0.4s;
     animation-iteration-count: 1;
@@ -96,7 +98,7 @@ svg {
 
 .deck .card.match {
     cursor: default;
-    background: #02ccba;
+    background: #f5ce67;
     font-size: 33px;
     animation: flip 0.4s;
     animation-iteration-count: 1;
@@ -111,6 +113,7 @@ svg {
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
+    color: #d5dee2;
 }
 
 .score-panel .stars {
@@ -140,7 +143,7 @@ svg {
     top: 50%;
     width: 340px;
     min-height: 300px;
-    background: linear-gradient(160deg, #02ccba 0%, #02b3e4 100%);
+    background: linear-gradient(160deg, #f5ce67 0%, #1f92e7 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -195,13 +198,13 @@ svg {
 @keyframes flip {
     0% { transform: rotateY(180deg); background: #083961; }
     49% { background: #083961; }
-    50% { transform: rotateY(90deg); background: #02b3e4; }
+    50% { transform: rotateY(90deg); background: #1f92e7; }
     100% { transform: rotateY(0deg); }
 }
 
 @keyframes reverseflip {
-    0% { transform: rotateY(0deg); background: #02b3e4; }
-    49% { background: #02b3e4; }
+    0% { transform: rotateY(0deg); background: #1f92e7; }
+    49% { background: #1f92e7; }
     50% { transform: rotateY(90deg); background: #083961; }
     100% { transform: rotateY(180deg); background: #083961; }
 }
@@ -221,10 +224,10 @@ svg {
 }
 
 @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); background: red; }
+    0% { transform: translate(1px, 1px) rotate(0deg); background: #f50625; }
     20% { transform: translate(-3px, 0px) rotate(1deg); }
     40% { transform: translate(2px, -1px) rotate(1deg); }
     60% { transform: translate(-3px, 1px) rotate(0deg); }
     80% { transform: translate(1px, -1px) rotate(1deg); }
-    100% { transform: translate(0px, 0px) rotate(-1deg); background: red; }
+    100% { transform: translate(0px, 0px) rotate(-1deg); background: #f50625; }
 }
