@@ -34,13 +34,29 @@ h1 {
 }
 
 /*
+ * Background styles for cards
+ */
+svg {
+    display: none;
+    background-color: transparent;
+    fill: currentColor;
+    width: 50px;
+    height: 50px;
+}
+
+.display-card {
+    display: inline-block;
+}
+
+
+/*
  * Styles for the deck of cards
  */
 
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    background: linear-gradient(160deg, #60a7e2 0%, #6681db 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -173,7 +189,7 @@ h1 {
  /*
  * CSS Animations
  */
-
+/*
 @keyframes flip {
     0% { transform: rotateY(180deg); font-size: 0; background: #083961; }
     49% { font-size: 0; background: #083961; }
@@ -195,4 +211,4 @@ h1 {
     60% { transform: translate(-3px, 1px) rotate(0deg); }
     80% { transform: translate(1px, -1px) rotate(1deg); }
     100% { transform: translate(0px, 0px) rotate(-1deg); background: red; }
-}
+} */
