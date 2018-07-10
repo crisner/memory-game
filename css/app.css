@@ -44,8 +44,10 @@ svg {
     height: 50px;
 }
 
-.display-card {
+.display-icon {
     display: inline-block;
+    animation: showicon 0.4s;
+    animation-iteration-count: 1;
 }
 
 
@@ -189,19 +191,33 @@ svg {
  /*
  * CSS Animations
  */
-/*
+
 @keyframes flip {
-    0% { transform: rotateY(180deg); font-size: 0; background: #083961; }
-    49% { font-size: 0; background: #083961; }
-    50% { transform: rotateY(90deg); font-size: 33px; background: #02b3e4; }
+    0% { transform: rotateY(180deg); background: #083961; }
+    49% { background: #083961; }
+    50% { transform: rotateY(90deg); background: #02b3e4; }
     100% { transform: rotateY(0deg); }
 }
 
 @keyframes reverseflip {
-    0% { transform: rotateY(0deg); font-size: 33px; background: #02b3e4; }
-    49% { font-size: 33px; background: #02b3e4; }
-    50% { transform: rotateY(90deg); font-size: 0; background: #083961; }
-    100% { transform: rotateY(180deg); font-size: 0; background: #083961; }
+    0% { transform: rotateY(0deg); background: #02b3e4; }
+    49% { background: #02b3e4; }
+    50% { transform: rotateY(90deg); background: #083961; }
+    100% { transform: rotateY(180deg); background: #083961; }
+}
+
+@keyframes showicon {
+    0% { opacity: 0;}
+    49% { opacity: 0;}
+    50% { opacity: 1;}
+    100% { opacity: 1;}
+}
+
+@keyframes hideicon {
+    0% { opacity: 1;}
+    49% { opacity: 1;}
+    50% { opacity: 0;}
+    100% { opacity: 0;}
 }
 
 @keyframes shake {
@@ -211,4 +227,4 @@ svg {
     60% { transform: translate(-3px, 1px) rotate(0deg); }
     80% { transform: translate(1px, -1px) rotate(1deg); }
     100% { transform: translate(0px, 0px) rotate(-1deg); background: red; }
-} */
+}
