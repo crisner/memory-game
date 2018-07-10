@@ -118,6 +118,7 @@ function finalScore() {
 
     if (matchedCards.length === 16) {
         modal.style.display = 'block';
+        backdrop.style.display = 'block';
         score.textContent = moves.textContent;
         backdrop.classList.add('backdrop-show');
         backdrop.style.height = containerHeight + 'px';
