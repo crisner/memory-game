@@ -140,10 +140,11 @@ svg {
 
  .final-score.modal {
     position: absolute;
-    top: 50%;
+    top: 47%;
     width: 340px;
     min-height: 300px;
-    background: linear-gradient(160deg, #f5ce67 0%, #1f92e7 100%);
+    color: #d5dee2;
+    background: linear-gradient(160deg, #7494b3 0%, #1b8edc 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -162,7 +163,7 @@ svg {
  }
 
  .final-score.modal .modal-stars {
-    color: yellow;
+    color: #f5ce67;
     list-style: none;
     display: flex;
     justify-content: center;

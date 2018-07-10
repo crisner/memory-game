@@ -121,7 +121,7 @@ function finalScore() {
         score.textContent = moves.textContent;
         backdrop.classList.add('backdrop-show');
         backdrop.style.height = containerHeight + 'px';
-        starScore('.modal-stars', 'none', 'yellow');
+        starScore('.modal-stars', 'none', '#f5ce67');
     }
 
     function close() {
