@@ -55,12 +55,13 @@ let matchedCards = [];
 
 function show(e) {
     //  Prevent opening more than two cards
-    if (openCards.length >= 2 || e.target.classList.contains('open', 'show') || e.target.classList.contains('match') || e.target.classList.contains('fa')) {
+    if (openCards.length >= 2 || e.target.classList.contains('open', 'show') || e.target.classList.contains('match') || e.target.classList.contains('icon')) {
         return;
     }
 
     // Push open cards to array
     e.target.classList.add('open', 'show');
+    e.target.firstElementChild.classList.add('display-icon');
     openCards.push(e.target);
 
     // Close open cards after sometime
@@ -73,7 +74,7 @@ function show(e) {
 }
 
 function match() {
-    if (openCards[0].firstElementChild.classList.value === openCards[1].firstElementChild.classList.value) {
+    if (openCards[0].firstElementChild.getAttribute('title') === openCards[1].firstElementChild.getAttribute('title')) {
         openCards.map(function(card) {
             card.className = 'card match';
             matchedCards.push(card);
@@ -87,13 +88,17 @@ function match() {
                 opencard.style.animation = 'shake 0.5s';
                 setTimeout(function() {
                     opencard.style.animation = 'reverseflip 0.4s';
+                    opencard.firstElementChild.style.animation = 'hideicon 0.4s';
                 }, 500);
             }
             setTimeout(function() {
                 for(let opencard of openCards) {
                     opencard.classList.remove('open', 'show');
+                    opencard.firstElementChild.classList.remove('display-icon');
                     opencard.style.animation = '';
+                    opencard.firstElementChild.style.animation = '';
                     opencard.removeAttribute('style');
+                    opencard.firstElementChild.removeAttribute('style');
                 }
                 openCards = [];
             }, 800);
@@ -145,10 +150,12 @@ function restart() {
 
     matchedCards.map(function(card) {
         card.classList.remove('match');
+        card.firstElementChild.classList.remove('display-icon');
     });
 
     openCards.map(function(card) {
         card.classList.remove('open', 'show');
+        card.firstElementChild.classList.remove('display-icon');
     });
 
     movesCounter = 0;
