@@ -159,11 +159,13 @@ function restart() {
         card.firstElementChild.classList.remove('display-icon');
     });
 
-    movesCounter = 0;
-    moves.textContent = movesCounter + ' Moves';
-    openCards = [];
-    matchedCards = [];
-    starScore('.stars');
+    if (movesCounter !== 0) {
+        movesCounter = 0;
+        moves.textContent = movesCounter + ' Moves';
+        openCards = [];
+        matchedCards = [];
+        starScore('.stars');
+    }
 }
 
 // Function to display the number of stars received according to player's moves
