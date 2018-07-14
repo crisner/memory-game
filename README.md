@@ -1,20 +1,22 @@
 # Memory Game Project
 
-## Table of Contents
+A memory game project for Udacity Front End Development Project.
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+## How to play
+Try to match the cards with its respective pair with as few moves as possible
+- Reveal cards by clicking on them
+- Only two cards can be revealed at a time
+- If the symbols on the cards do not match the cards will revert to the original position
+- If the symbols match the revealed cards will remain open
+- Game is successfully completed when all pairs of cards have been matched to each other
 
-## Instructions
+## Tools used
+- HTML
+- CSS
+- javaScript
+- [svg-sprite-generator](https://github.com/frexy/svg-sprite-generator)
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Credits
+- [Background image designed by Freepik](https://www.freepik.com/free-vector/cartoon-background-with-stars_1076870.htm)
+- Space Iconography created by [Elena de Pomar](http://elenadepomar.com/)
+- [Fontawesome icons](https://fontawesome.com/v4.7.0/icons/)
