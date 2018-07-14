@@ -2,6 +2,8 @@
 
 A memory game project for Udacity Front End Development Project.
 
+[Try it out!](https://crisner.github.io/memory-game/)
+
 ## How to play
 Try to match the cards with its respective pair with as few moves as possible.
 - Reveal cards by clicking on them
