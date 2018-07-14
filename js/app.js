@@ -1,7 +1,35 @@
 /*
  * Create a list that holds all of your cards
  */
+const deck = document.querySelector('.deck');
+const ul = document.createDocumentFragment();
+const cardsList = [];
+// let t1, t2;
+// t1 = performance.now();
+// console.log(t1);
+for(let i = 1; i <= 16; i++) {
+    const li = document.createElement('li');
+    let svg = '';
+    li.className = 'card';
+    if (i > 8) {
+        let j = i - 8;
+        svg = '<svg role="img" class="icon" title="0' + j + '"><use xlink:href="./img/sprites.svg#icon-' + j + '"></use></svg>';
+        li.innerHTML = svg;
+    } else {
+        svg = '<svg role="img" class="icon" title="0' + i + '"><use xlink:href="./img/sprites.svg#icon-' + i + '"></use></svg>';
+        li.innerHTML = svg;
+    }
+    cardsList.push(li);
+}
 
+const shuffledCards = shuffle(cardsList);
+for(let card of shuffledCards) {
+    ul.appendChild(card);
+}
+
+deck.appendChild(ul);
+// t2 = performance.now();
+// console.log(t2, t2 - t1);
 
 /*
  * Display the cards on the page
@@ -44,7 +72,9 @@ let movesCounter = 0;
 moves.textContent = movesCounter + ' Moves';
 
 // TODO: Reset game
-restartBtn.addEventListener('click', restart);
+restartBtn.addEventListener('click', function() {
+    restart(deck, ul);
+});
 
 // TODO: Reveal cards
 for(let card of cards) {
@@ -131,21 +161,21 @@ function finalScore() {
     }
 }
 
-function restart() {
+function restart(parentTag, fragment) {
     // Shuffle cards
-    const deck = document.querySelector('.deck');
     const cardsArr = [];
     cards.forEach(function(card) {
         cardsArr.push(card);
     });
-    deck.innerHTML = '';
+    parentTag.innerHTML = '';
     cards = shuffle(cardsArr);
     for(let card of cards) {
-        deck.appendChild(card);
+        fragment.appendChild(card);
     }
+    parentTag.appendChild(fragment);
 
     // Display closed cards
-    if (openCards.length === 0 && matchedCards.length === 0) {
+    if (openCards.length === 0 && matchedCards.length === 0 && movesCounter === 0) {
         return;
     }
 
@@ -159,13 +189,11 @@ function restart() {
         card.firstElementChild.classList.remove('display-icon');
     });
 
-    if (movesCounter !== 0) {
-        movesCounter = 0;
-        moves.textContent = movesCounter + ' Moves';
-        openCards = [];
-        matchedCards = [];
-        starScore('.stars');
-    }
+    movesCounter = 0;
+    moves.textContent = movesCounter + ' Moves';
+    openCards = [];
+    matchedCards = [];
+    starScore('.stars');
 }
 
 // Function to display the number of stars received according to player's moves
