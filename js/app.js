@@ -199,17 +199,21 @@ function restart(parentTag, fragment) {
 // Function to display the number of stars received according to player's moves
 function starScore(name, display, color) {
     const stars = document.querySelector(name).children;
+    const comment = document.querySelector('.comment');
     if (movesCounter > 12 && movesCounter < 20) {
         stars[2].style.color = 'black';
         stars[2].style.display = display;
+        comment.textContent = 'Good!!';
     } else if (movesCounter >= 20) {
         stars[1].style.color = 'black';
         stars[1].style.display = display;
         stars[2].style.display = display;
+        comment.textContent = 'You can do it better!';
     } else if (movesCounter <= 12) {
         stars[1].style.display = 'inline-block';
         stars[2].style.display = 'inline-block';
         stars[2].style.color = color || 'orange';
         stars[1].style.color = color || 'orange';
+        comment.textContent = 'Perfect!!!';
     }
 }
