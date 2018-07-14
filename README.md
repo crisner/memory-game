@@ -1,6 +1,6 @@
 # Memory Game Project
 
-A memory game project for Udacity Front End Development Project.
+A memory game for Udacity Front End Development project.
 
 [Try it out!](https://crisner.github.io/memory-game/)
 
