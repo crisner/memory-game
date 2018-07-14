@@ -139,7 +139,7 @@ svg {
  * Styles for the Final Score Modal
  */
 
- .final-score.modal {
+.final-score.modal {
     position: absolute;
     top: 47%;
     width: 340px;
@@ -151,57 +151,57 @@ svg {
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: none;
     z-index: 2;
- }
+}
 
- .final-score.modal h1 {
+.final-score.modal h1 {
     text-align: center;
- }
+}
 
- .final-score.modal .fa.fa-times {
+.final-score.modal .fa.fa-times {
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
- }
+}
 
- .final-score.modal .modal-stars {
+.final-score.modal .modal-stars {
     color: #f5ce67;
     list-style: none;
     display: flex;
     justify-content: center;
     padding: 0;
     margin: 1.5em 0;
- }
+}
 
- .final-score.modal p.comment {
+.final-score.modal p.comment {
     font-size: 1.2em;
     padding: 0;
     margin: 0em 0 -0.6em 0;
- }
+}
 
- .final-score.modal .fa.fa-star {
+.final-score.modal .fa.fa-star {
     margin: 0.2em;
     font-size: x-large;
- }
+}
 
- .final-score.modal p {
+.final-score.modal p {
     text-align: center;
- }
+}
 
- .backdrop {
-     display: none;
-     width: 100%;
- }
+.backdrop {
+    display: none;
+    width: 100%;
+}
 
- .backdrop-show {
+.backdrop-show {
     display: block;
     position: absolute;
     background: rgba(46, 61, 73, 0.1);
     z-index: 1;
- }
+}
 
- /*
- * Footer styles
- */
+/*
+* Footer styles
+*/
 footer p {
     padding: 0;
     padding-bottom: 1em;
@@ -235,9 +235,9 @@ footer p {
     margin-right: -310px;
 }
 
- /*
- * CSS Animations
- */
+/*
+* CSS Animations
+*/
 
 @keyframes flip {
     0% { transform: rotateY(180deg); background: #083961; }
