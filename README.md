@@ -3,7 +3,7 @@
 A memory game project for Udacity Front End Development Project.
 
 ## How to play
-Try to match the cards with its respective pair with as few moves as possible
+Try to match the cards with its respective pair with as few moves as possible.
 - Reveal cards by clicking on them
 - Only two cards can be revealed at a time
 - If the symbols on the cards do not match the cards will revert to the original position
