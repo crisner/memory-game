@@ -4,9 +4,7 @@
 const deck = document.querySelector('.deck');
 const ul = document.createDocumentFragment();
 const cardsList = [];
-// let t1, t2;
-// t1 = performance.now();
-// console.log(t1);
+
 for(let i = 1; i <= 16; i++) {
     const li = document.createElement('li');
     let svg = '';
@@ -28,8 +26,6 @@ for(let card of shuffledCards) {
 }
 
 deck.appendChild(ul);
-// t2 = performance.now();
-// console.log(t2, t2 - t1);
 
 /*
  * Display the cards on the page
