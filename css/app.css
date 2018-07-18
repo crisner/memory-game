@@ -130,6 +130,12 @@ svg {
     display: inline-block;
 }
 
+.score-panel .timer {
+    display: inline;
+    position: absolute;
+    left: 59%;
+}
+
 .score-panel .restart {
     float: right;
     cursor: pointer;

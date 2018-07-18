@@ -64,6 +64,10 @@ function shuffle(array) {
 let cards = document.querySelectorAll('.card');
 const moves = document.querySelector('.moves');
 const restartBtn = document.querySelector('.restart');
+const min = document.querySelector('.min');
+const sec = document.querySelector('.sec');
+let openCards = [];
+let matchedCards = [];
 let movesCounter = 0;
 moves.textContent = movesCounter + ' Moves';
 
@@ -72,12 +76,50 @@ restartBtn.addEventListener('click', function() {
     restart(deck, ul);
 });
 
+let playerTime = 0;
+let timerOn = false;
+// TODO: Start running timer
+deck.addEventListener('click', function(e) {
+    let minuteCounter = 0;
+    let secondCounter = 0;
+
+    if (matchedCards.length === 16) {
+        timerOn = false;
+        clearInterval(playerTime);
+        return;
+    }
+
+    if (timerOn) {
+        return;
+    }
+
+    if (e.target.classList.contains('card')) {
+        timerOn = true;
+        min.textContent = '00';
+        sec.textContent = '00';
+        minuteCounter = 0;
+        secondCounter = 0;
+        playerTime = setInterval(timer, 1000);
+    }
+
+
+    // Timer
+    function timer() {
+        if (secondCounter === 59) {
+            secondCounter = 0;
+            minuteCounter++;
+            min.textContent = minuteCounter < 10 ? '0' + minuteCounter : minuteCounter;
+        }
+        secondCounter++;
+        sec.textContent = secondCounter < 10 ? '0' + secondCounter : secondCounter;
+    }
+});
+
+
 // TODO: Reveal cards
 for(let card of cards) {
     card.addEventListener('click', show);
 }
-let openCards = [];
-let matchedCards = [];
 
 function show(e) {
     //  Prevent opening more than two cards
@@ -187,9 +229,13 @@ function restart(parentTag, fragment) {
 
     movesCounter = 0;
     moves.textContent = movesCounter + ' Moves';
+    min.textContent = '00';
+    sec.textContent = '00';
     openCards = [];
     matchedCards = [];
     starScore('.stars');
+    timerOn = false;
+    clearInterval(playerTime);
 }
 
 // Function to display the number of stars received according to player's moves
