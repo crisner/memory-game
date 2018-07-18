@@ -179,7 +179,9 @@ function finalScore() {
     const modal = document.querySelector('.modal');
     const closeModal = document.querySelector('.close');
     const playAgain = document.querySelector('.play-again');
-    const score = document.querySelector('#total-moves');
+    const minFinal = document.querySelector('.min');
+    const secFinal = document.querySelector('.sec');
+    const score = document.querySelector('#total-time');
     const container = document.querySelector('.container');
     const backdrop = document.querySelector('.backdrop');
     const containerHeight = container.offsetHeight;
@@ -195,7 +197,7 @@ function finalScore() {
     if (matchedCards.length === 16) {
         modal.style.display = 'block';
         backdrop.style.display = 'block';
-        score.textContent = moves.textContent;
+        score.textContent = minFinal.textContent + 'm ' + secFinal.textContent + 's';
         backdrop.classList.add('backdrop-show');
         backdrop.style.height = containerHeight + 'px';
         starScore('.modal-stars', 'none', '#f5ce67');
