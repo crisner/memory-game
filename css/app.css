@@ -133,7 +133,7 @@ svg {
 .score-panel .timer {
     display: inline;
     position: absolute;
-    left: 59%;
+    left: 56%;
 }
 
 .score-panel .restart {
@@ -147,7 +147,7 @@ svg {
 
 .final-score.modal {
     position: absolute;
-    top: 47%;
+    /* top: 47%; */
     width: 340px;
     min-height: 300px;
     color: #d5dee2;
@@ -288,4 +288,166 @@ footer p {
     60% { transform: translate(-3px, 1px) rotate(0deg); }
     80% { transform: translate(1px, -1px) rotate(1deg); }
     100% { transform: translate(0px, 0px) rotate(-1deg); background: #f50625; }
+}
+
+/* MEDIA QUERIES */
+/* Ipad */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px) {
+    .score-panel {
+        width: 576px;
+        font-size: 1.2em;
+    }
+
+    .final-score.modal h1 {
+        font-size: 3em;
+    }
+
+    .score-panel .timer {
+        left: 67%;
+    }
+
+    .deck {
+        width: 860px;
+        min-height: 880px;
+    }
+
+    .deck .card {
+        height: calc(880px/5);
+        width: calc(860px/5);
+    }
+
+    svg {
+        width: 74px;
+        height: 74px;
+    }
+
+    .final-score.modal {
+        width: 600px;
+        min-height: 562px;
+    }
+
+    .final-score.modal .controls {
+        font-size: 2em;
+    }
+
+    .final-score.modal p.comment {
+        font-size: 1.8em;
+    }
+
+    .final-score.modal .fa.fa-star {
+        font-size: 3em;
+    }
+
+    .final-score.modal p {
+        font-size: 1.8em;
+    }
+}
+
+/*  iPhone X, 6, 7, 8  */
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px) {
+    h1 {
+        font-size: 3.4em;
+    }
+
+    .score-panel {
+        width: 659px;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .score-panel .timer {
+        left: 67%;
+    }
+
+    .deck {
+        width: 860px;
+        min-height: 880px;
+    }
+
+    .deck .card {
+        height: calc(880px/5);
+        width: calc(860px/5);
+    }
+
+    svg {
+        width: 96px;
+        height: 96px;
+    }
+
+    .left,
+    .right,
+    .left a:hover,
+    .right a:hover {
+        font-size: 1.3em;
+        letter-spacing: 0.1em;
+    }
+}
+
+/*  iPhone 5  */
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px) {
+    h1 {
+        font-size: 3.4em;
+    }
+
+    .score-panel {
+        width: 659px;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .score-panel .timer {
+        left: 67%;
+    }
+
+    .deck {
+        width: 860px;
+        min-height: 880px;
+    }
+
+    .deck .card {
+        height: calc(880px/5);
+        width: calc(860px/5);
+    }
+
+    svg {
+        width: 96px;
+        height: 96px;
+    }
+
+    .left,
+    .right,
+    .left a:hover,
+    .right a:hover {
+        font-size: 1.3em;
+        letter-spacing: 0.1em;
+    }
+
+    .final-score.modal {
+        width: 700px;
+        min-height: 590px;
+    }
+
+    .final-score.modal .controls {
+        font-size: 2em;
+    }
+
+    .final-score.modal p.comment {
+        font-size: 2em;
+    }
+
+    .final-score.modal .fa.fa-star {
+        font-size: 3em;
+    }
+
+    .final-score.modal p {
+        font-size: 1.8em;
+    }
 }
