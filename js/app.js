@@ -83,16 +83,19 @@ deck.addEventListener('click', function(e) {
     let minuteCounter = 0;
     let secondCounter = 0;
 
+    // TODO: Stop timer
     if (matchedCards.length === 16) {
         timerOn = false;
         clearInterval(playerTime);
         return;
     }
 
+    // Do nothing if timer is running
     if (timerOn) {
         return;
     }
 
+    // TODO: Start timer
     if (e.target.classList.contains('card')) {
         timerOn = true;
         min.textContent = '00';
@@ -102,8 +105,6 @@ deck.addEventListener('click', function(e) {
         playerTime = setInterval(timer, 1000);
     }
 
-
-    // Timer
     function timer() {
         if (secondCounter === 59) {
             secondCounter = 0;
@@ -187,8 +188,10 @@ function finalScore() {
         restart(deck, ul);
         close();
     });
+
     closeModal.addEventListener('click', close);
 
+    // TODO: Display modal
     if (matchedCards.length === 16) {
         modal.style.display = 'block';
         backdrop.style.display = 'block';
