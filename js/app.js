@@ -177,11 +177,16 @@ function match() {
 function finalScore() {
     const modal = document.querySelector('.modal');
     const closeModal = document.querySelector('.close');
+    const playAgain = document.querySelector('.play-again');
     const score = document.querySelector('#total-moves');
     const container = document.querySelector('.container');
     const backdrop = document.querySelector('.backdrop');
     const containerHeight = container.offsetHeight;
 
+    playAgain.addEventListener('click', function() {
+        restart(deck, ul);
+        close();
+    });
     closeModal.addEventListener('click', close);
 
     if (matchedCards.length === 16) {

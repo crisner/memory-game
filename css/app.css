@@ -163,9 +163,17 @@ svg {
     text-align: center;
 }
 
-.final-score.modal .fa.fa-times {
+.final-score.modal .controls {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.final-score.modal .play-again {
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.final-score.modal .fa.fa-times {
     cursor: pointer;
 }
 
