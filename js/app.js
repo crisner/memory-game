@@ -110,19 +110,6 @@ function shuffle(arr) {     // Function to shuffle cards
     }
     return shuffled;
 }
-// function shuffle(arr) {
-//     let length = arr.length;
-//     let shuffled = [];
-//     let indices = [];
-//     while(shuffled.length < length) {
-//       var index = Math.floor(Math.random() * length);
-//       if (indices.indexOf(index) < 0) {
-//         shuffled.push(arr[index]);
-//         indices.push(index);
-//       }
-//     }
-//     return shuffled;
-// }
 
 function show(e) {
     //  Prevent opening more than two cards
