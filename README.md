@@ -18,7 +18,11 @@ Try to match the cards with its respective pair with as few moves as possible.
 - javaScript
 - [svg-sprite-generator](https://github.com/frexy/svg-sprite-generator)
 
+## Running files locally
+To run or test files on your local machine use live server or install a local server environment using [MAMP](https://www.mamp.info/en/) or any other setup of your choice.
+
 ## Credits
+- Made by me([Renisha Christie](https://github.com/crisner))
 - [Background image designed by Freepik](https://www.freepik.com/free-vector/cartoon-background-with-stars_1076870.htm)
 - Space Iconography created by [Elena de Pomar](http://elenadepomar.com/)
 - [Fontawesome icons](https://fontawesome.com/v4.7.0/icons/)
