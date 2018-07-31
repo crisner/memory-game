@@ -28,29 +28,6 @@ for(let card of shuffledCards) {
 deck.appendChild(ul);
 
 /*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
-
-// Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-}
-
-
-/*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
@@ -121,6 +98,31 @@ deck.addEventListener('click', function(e) {
 for(let card of cards) {
     card.addEventListener('click', show);
 }
+
+function shuffle(arr) {     // Function to shuffle cards
+    let shuffled = [];
+    let currentLength = arr.length;
+    while(currentLength !== 0) {
+      let randomNumber = Math.floor(Math.random() * currentLength);
+      shuffled.push(arr[randomNumber]);
+      currentLength -= 1;
+      arr[randomNumber] = arr[currentLength];
+    }
+    return shuffled;
+}
+// function shuffle(arr) {
+//     let length = arr.length;
+//     let shuffled = [];
+//     let indices = [];
+//     while(shuffled.length < length) {
+//       var index = Math.floor(Math.random() * length);
+//       if (indices.indexOf(index) < 0) {
+//         shuffled.push(arr[index]);
+//         indices.push(index);
+//       }
+//     }
+//     return shuffled;
+// }
 
 function show(e) {
     //  Prevent opening more than two cards
