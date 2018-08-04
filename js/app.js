@@ -14,7 +14,6 @@ try {
 }
 catch(err) {
 	if (err) {
-        console.log('its true');
         for(let i = 1; i <= 16; i++) {
             const li = document.createElement('li');
             let svg = '';
@@ -30,7 +29,6 @@ catch(err) {
             cardsList.push(li);
         }
 	} else if (!err) {
-        console.log('its false');
         for(let i = 1; i <= 16; i++) {
             const li = document.createElement('li');
             let svg = '';
