@@ -5,19 +5,47 @@ const deck = document.querySelector('.deck');
 const ul = document.createDocumentFragment();
 const cardsList = [];
 
-for(let i = 1; i <= 16; i++) {
-    const li = document.createElement('li');
-    let svg = '';
-    li.className = 'card';
-    if (i > 8) {
-        let j = i - 8;
-        svg = '<svg role="img" class="icon" title="0' + j + '"><use xlink:href="./img/sprites.svg#icon-' + j + '"></use></svg>';
-        li.innerHTML = svg;
-    } else {
-        svg = '<svg role="img" class="icon" title="0' + i + '"><use xlink:href="./img/sprites.svg#icon-' + i + '"></use></svg>';
-        li.innerHTML = svg;
-    }
-    cardsList.push(li);
+// TODO: Use svg or png format to display icons according the file path
+const uri = document.baseURI;
+const uriContains = uri[0] + uri[1] + uri[2] + uri[3] + uri[4] + uri[5] + uri[6] + uri[7];
+try {
+    if (uriContains.toLowerCase() === 'file:///') throw true;
+	if (uriContains.toLowerCase() !== 'file:///') throw false;
+}
+catch(err) {
+	if (err) {
+        console.log('its true');
+        for(let i = 1; i <= 16; i++) {
+            const li = document.createElement('li');
+            let svg = '';
+            li.className = 'card';
+            if (i > 8) {
+                let j = i - 8;
+                svg = '<svg role="img" class="icon fallback fallback-png-'+ j +'" title="0' + j + '"></svg>';
+                li.innerHTML = svg;
+            } else {
+                svg = '<svg role="img" class="icon fallback fallback-png-'+ i +'" title="0' + i + '"></svg>';
+                li.innerHTML = svg;
+            }
+            cardsList.push(li);
+        }
+	} else if (!err) {
+        console.log('its false');
+        for(let i = 1; i <= 16; i++) {
+            const li = document.createElement('li');
+            let svg = '';
+            li.className = 'card';
+            if (i > 8) {
+                let j = i - 8;
+                svg = '<svg role="img" class="icon" title="0' + j + '"><use xlink:href="./img/sprites.svg#icon-' + j + '"></use></svg>';
+                li.innerHTML = svg;
+            } else {
+                svg = '<svg role="img" class="icon" title="0' + i + '"><use xlink:href="./img/sprites.svg#icon-' + i + '"></use></svg>';
+                li.innerHTML = svg;
+            }
+            cardsList.push(li);
+        }
+	}
 }
 
 const shuffledCards = shuffle(cardsList);
@@ -26,17 +54,6 @@ for(let card of shuffledCards) {
 }
 
 deck.appendChild(ul);
-
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
 
 let cards = document.querySelectorAll('.card');
 const moves = document.querySelector('.moves');

@@ -53,6 +53,46 @@ svg {
     animation-iteration-count: 1;
 }
 
+.fallback {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60%;
+    height: 60%;
+}
+
+.fallback-png-1 {
+    background-image: url(../img/png/02.png);
+}
+
+.fallback-png-2 {
+    background-image: url(../img/png/03.png);
+}
+
+.fallback-png-3 {
+    background-image: url(../img/png/05.png);
+}
+
+.fallback-png-4 {
+    background-image: url(../img/png/06.png);
+}
+
+.fallback-png-5 {
+    background-image: url(../img/png/08.png);
+}
+
+.fallback-png-6 {
+    background-image: url(../img/png/09.png);
+}
+
+.fallback-png-7 {
+    background-image: url(../img/png/10.png);
+}
+
+.fallback-png-8 {
+    background-image: url(../img/png/12.png);
+}
+
 
 /*
  * Styles for the deck of cards
